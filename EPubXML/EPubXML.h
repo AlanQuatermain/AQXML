@@ -8,6 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EPubXML : NSObject
+#import "AQXMLDocument.h"
+#import "AQXMLElement.h"
+#import "AQXMLNode.h"
+#import "AQXMLAttribute.h"
+#import "AQXMLNodeSet.h"
+#import "AQXMLNamespace.h"
+#import "AQXMLSchema.h"
+#import "AQXMLDTDNode.h"
+#import "AQXMLReader.h"
+#import "AQXMLUtilities.h"
+#import "AQXMLXPath.h"
+#import "AQXMLCanonicalizer.h"
 
-@end
+#import "AQXMLTransform.h"
+#import "DigestTransforms.h"
+#import "C14NTransforms.h"
+#import "Base64Transform.h"
+#import "XMLProcessTransforms.h"
+
+#import "AQXMLSignatureAlgorithm.h"
+#import "AQXMLCryptoAlgorithm.h"
