@@ -1451,6 +1451,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EPubXML/EPubXML-Prefix.pch";
 				INFOPLIST_FILE = "EPubXML/EPubXML-Info.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/EPubXML/Algorithms/CryptoPP\"",
@@ -1470,6 +1471,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EPubXML/EPubXML-Prefix.pch";
 				INFOPLIST_FILE = "EPubXML/EPubXML-Info.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/EPubXML/Algorithms/CryptoPP\"",
