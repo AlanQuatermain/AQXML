@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A98867F219FC1F3D001B6662 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9408D9319FC1B03002ECE41 /* CoreServices.framework */; };
 		AB060CAE15F7F1140011611E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB060CAD15F7F1140011611E /* Cocoa.framework */; };
 		AB060CB815F7F1140011611E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB060CB615F7F1140011611E /* InfoPlist.strings */; };
 		AB060CC415F7F1140011611E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB060CC315F7F1140011611E /* SenTestingKit.framework */; };
@@ -280,6 +281,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A9408D9319FC1B03002ECE41 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		A9408D9519FC1B14002ECE41 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AB060CAA15F7F1140011611E /* EPubXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EPubXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB060CAD15F7F1140011611E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AB060CB015F7F1140011611E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -555,6 +558,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98867F219FC1F3D001B6662 /* CoreServices.framework in Frameworks */,
 				AB060CAE15F7F1140011611E /* Cocoa.framework in Frameworks */,
 				ABEC68FD160A629A0062B990 /* Security.framework in Frameworks */,
 				ABEC6901160A62E10062B990 /* libxslt.dylib in Frameworks */,
@@ -579,6 +583,8 @@
 		AB060C9E15F7F1140011611E = {
 			isa = PBXGroup;
 			children = (
+				A9408D9519FC1B14002ECE41 /* CFNetwork.framework */,
+				A9408D9319FC1B03002ECE41 /* CoreServices.framework */,
 				AB060CB315F7F1140011611E /* EPubXML */,
 				AB060CC915F7F1140011611E /* EPubXMLTests */,
 				AB060CAC15F7F1140011611E /* Frameworks */,
@@ -1449,11 +1455,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EPubXML/EPubXML-Prefix.pch";
 				INFOPLIST_FILE = "EPubXML/EPubXML-Info.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/EPubXML/Algorithms/CryptoPP\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -1468,11 +1478,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EPubXML/EPubXML-Prefix.pch";
 				INFOPLIST_FILE = "EPubXML/EPubXML-Info.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/EPubXML/Algorithms/CryptoPP\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
