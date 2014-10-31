@@ -62,6 +62,8 @@ extern NSString * const AQXMLParserBrokenPipeNotification;
 
 - (id) initWithData: (NSData *) data;   // creates a stream from the data
 
+- (id) initWithURL: (NSURL *) fileUrl;
+
 @property (NS_NONATOMIC_IOSONLY weak) id<AQXMLParserDelegate> delegate;
 @property (NS_NONATOMIC_IOSONLY weak) id<AQXMLParserProgressDelegate> progressDelegate;
 
