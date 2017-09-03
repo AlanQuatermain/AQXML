@@ -41,6 +41,7 @@
 
 @interface AQXMLHMACTransform : AQXMLTransform
 @property (nonatomic, strong) NSData * keyData;
+@property (nonatomic, strong) NSData * key;
 @end
 
 #define HMAC_CLASS(type) HMAC##type##Transform

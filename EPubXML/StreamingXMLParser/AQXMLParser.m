@@ -738,6 +738,33 @@ static void __ignorableWhitespace( void * ctx, const xmlChar * ch, int len )
     return ( self );
 }
 
+- (id) initWithURL: (NSURL *) fileUrl
+{
+    NSInputStream* myInput = [NSInputStream inputStreamWithURL:fileUrl];
+    _internal = [[_AQXMLParserInternal alloc] init];
+#if TARGET_OS_IPHONE
+	_internal->saxHandler = NSZoneMalloc( [self zone], sizeof(struct _xmlSAXHandler) );
+#else
+	_internal->saxHandler = NSAllocateCollectable( sizeof(struct _xmlSAXHandler), 0 );
+#endif
+	_internal->parserContext = NULL;
+	_internal->error = nil;
+	
+	_stream = myInput;
+    
+    _internal->expectedDataLength = (float) [[[NSFileManager defaultManager] attributesOfItemAtPath:fileUrl.path error:nil] fileSize];
+    
+    if ( _internal->expectedDataLength != 0.0 )
+        NSLog(@"expected length %f", _internal->expectedDataLength);
+        [self _setupExpectedLength];
+	
+	[self _initializeSAX2Callbacks];
+#if 0
+    self.debugLogInput = YES;
+#endif
+	return ( self );
+}
+
 - (void) dealloc
 {
 	NSZoneFree( nil, _internal->saxHandler );
@@ -1274,8 +1301,8 @@ static void __ignorableWhitespace( void * ctx, const xmlChar * ch, int len )
 		if ( _progressDelegate != nil )
 		{
 			_internal->currentLength += (float) length;
-			//[_progressDelegate parser: self
-			//           updateProgress: (_internal->currentLength / _internal->expectedDataLength)];
+			[_progressDelegate parser: self
+			           updateProgress: (_internal->currentLength / _internal->expectedDataLength)];
 		}
     }
 }

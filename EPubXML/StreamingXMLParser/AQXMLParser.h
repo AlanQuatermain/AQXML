@@ -62,13 +62,15 @@ extern NSString * const AQXMLParserBrokenPipeNotification;
 
 - (id) initWithData: (NSData *) data;   // creates a stream from the data
 
-@property (NS_NONATOMIC_IOSONLY weak) id<AQXMLParserDelegate> delegate;
-@property (NS_NONATOMIC_IOSONLY weak) id<AQXMLParserProgressDelegate> progressDelegate;
+- (id) initWithURL: (NSURL *) fileUrl;
 
-@property (NS_NONATOMIC_IOSONLY assign) BOOL shouldProcessNamespaces;
-@property (NS_NONATOMIC_IOSONLY assign) BOOL shouldReportNamespacePrefixes;
-@property (NS_NONATOMIC_IOSONLY assign) BOOL shouldResolveExternalEntities;
-@property (NS_NONATOMIC_IOSONLY assign, getter=isInHTMLMode) BOOL HTMLMode;
+@property (NS_NONATOMIC_IOSONLY, weak) id<AQXMLParserDelegate> delegate;
+@property (NS_NONATOMIC_IOSONLY, weak) id<AQXMLParserProgressDelegate> progressDelegate;
+
+@property (NS_NONATOMIC_IOSONLY, assign) BOOL shouldProcessNamespaces;
+@property (NS_NONATOMIC_IOSONLY, assign) BOOL shouldReportNamespacePrefixes;
+@property (NS_NONATOMIC_IOSONLY, assign) BOOL shouldResolveExternalEntities;
+@property (NS_NONATOMIC_IOSONLY, assign, getter=isInHTMLMode) BOOL HTMLMode;
 
 - (BOOL) parse;
 - (void) abortParsing;
@@ -83,7 +85,7 @@ extern NSString * const AQXMLParserBrokenPipeNotification;
                                 selector: (SEL) completionSelector
                                  context: (void *) contextPtr;
 
-@property (NS_NONATOMIC_IOSONLY readonly) NSError * parserError;
+@property (NS_NONATOMIC_IOSONLY, readonly) NSError * parserError;
 
 @end
 
@@ -92,7 +94,7 @@ extern NSString * const AQXMLParserBrokenPipeNotification;
 @property (nonatomic, readonly, retain) NSString * systemID;
 @property (nonatomic, readonly) NSInteger lineNumber;
 @property (nonatomic, readonly) NSInteger columnNumber;
-@property (NS_NONATOMIC_IOSONLY assign) BOOL debugLogInput;
+@property (NS_NONATOMIC_IOSONLY, assign) BOOL debugLogInput;
 @end
 
 @class HTTPMessage;
